@@ -1,4 +1,13 @@
-FROM openjdk:17
+FROM python:3.10-slim
+
 WORKDIR /app
-COPY target/app.jar app.jar
-ENTRYPOINT ["java","-jar","app.jar"]
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY app/ .
+
+EXPOSE 8080
+
+CMD ["python", "app.py"]
+]
