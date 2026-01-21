@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        git 'https://github.com/<username>/ecs-cicd-pipeline.git'
+        git 'https://github.com/Mahavsarojini/ecs-cicd-pipeline.git'
       }
     }
     stage('Build Docker Image') {
